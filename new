@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script> 
+    <!-- default A-frame script i.e. to use A-frame components -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <!-- to add extra functionality and extra activity on the a-models -->
+    <!-- we import arjs version without NFT but with marker + location based support -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <!-- default AR script for aframe i.e. to display AR -->
+    <body style="margin : 0px; overflow: hidden;">
+        <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;">
+            <a-marker preset="hiro">
+                <a-entity
+                    position="0 0 0"
+                    scale="0.5 0.5 0.5"
+                    gltf-model="https://cdn.glitch.com/51a76c64-9671-4f50-a6a6-edb896c71624%2FRex.glb?v=1595650498258"
+                    animation-mixer = "clip: attack_tail"
+                    shadow="cast: true; receive: false"
+                    model-loaded>
+                </a-entity>
+                <!-- <a-sphere position="0 0 0"
+                        scale="2 2 2"></a-sphere> -->
+                <!-- <a-entity rotation="0 0 0" 
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+                position="3 3 0"
+                scale="10 10 10"
+                gltf-model="barbarian.glb"
+                ></a-entity> -->
+                <a-entity rotation="0 0 0" easing="linear" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+                    <a-sphere position="5 0 0" color="#FCD440"></a-sphere>
+                </a-entity>
+            </a-marker>
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
